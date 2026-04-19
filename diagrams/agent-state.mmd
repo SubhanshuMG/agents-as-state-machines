@@ -1,0 +1,12 @@
+%% Generated from tools/article_assets.py, edit here and regenerate.
+%% Agent state machine
+stateDiagram-v2
+ [*] --> Planning
+ Planning --> Acting : action_selected
+ Acting --> Reviewing : tool_result
+ Reviewing --> Planning : needs_more_info
+ Reviewing --> Finalizing : goal_met
+ Acting --> Failed : tool_error
+ Failed --> Planning : retry_allowed
+ Failed --> [*] : retries_exhausted
+ Finalizing --> [*]

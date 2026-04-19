@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.tox/
+.pytest_cache/
+.mypy_cache/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS / Linux / Windows noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artefacts (diagrams get rendered to SVG/PNG beside the .mmd)
+# keep them, they ship with the article.
+# Exception: keep *.svg generated from *.mmd out of git UNLESS
+# explicitly committed. Delete the next line if you want to ship
+# the generated SVG too.
+# diagrams/*.svg
+
+# Local-only scratch
+scratch/
+.env
+.envrc

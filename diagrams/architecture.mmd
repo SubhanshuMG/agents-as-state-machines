@@ -1,0 +1,21 @@
+flowchart TB
+    classDef st fill:#3a2a4a,stroke:#c48cff,color:#e9daff
+    classDef io fill:#2a2a4a,stroke:#7e74c4,color:#dcd6f7
+    classDef bad fill:#2a1d1d,stroke:#b8634a,color:#f1ddd5
+
+    Start([User message]):::io --> Intent[Intent Classifier]:::st
+    Intent -->|search| SearchSt[Search State]:::st
+    Intent -->|buy| BuySt[Buy State]:::st
+    Intent -->|support| SupSt[Support State]:::st
+
+    SearchSt --> Tool1[Tool: web_search]:::st
+    BuySt --> Tool2[Tool: create_order]:::st
+    SupSt --> Tool3[Tool: open_ticket]:::st
+
+    Tool1 --> Reply[Reply State]:::st
+    Tool2 --> Reply
+    Tool3 --> Reply
+
+    SearchSt -.-> Escape{HITL review}:::bad
+    BuySt -.-> Escape
+    Reply --> Done([Reply to user]):::io

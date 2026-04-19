@@ -1,0 +1,32 @@
+digraph G {
+  rankdir="TB";
+  bgcolor="transparent";
+  node [fontname="Helvetica", fontsize=14, shape=box, style="filled,rounded", fillcolor="#1a1e27", color="#8892b0", fontcolor="#ffffff", penwidth=2];
+  edge [fontname="Helvetica", fontsize=11, color="#7b8296", fontcolor="#cfd6e4", penwidth=1.4, arrowsize=0.8];
+  graph [fontname="Helvetica", fontsize=12, fontcolor="#cfd6e4", style="rounded", bgcolor="transparent", color="#3a4055"];
+  compound=true;
+  "Start" [label="User message", shape=oval, style="filled,rounded" fillcolor="#2a2a4a" color="#7e74c4" fontcolor="#dcd6f7" penwidth=2];
+  "Intent" [label="Intent Classifier", shape=box, style="filled,rounded" fillcolor="#3a2a4a" color="#c48cff" fontcolor="#e9daff" penwidth=2];
+  "SearchSt" [label="Search State", shape=box, style="filled,rounded" fillcolor="#3a2a4a" color="#c48cff" fontcolor="#e9daff" penwidth=2];
+  "BuySt" [label="Buy State", shape=box, style="filled,rounded" fillcolor="#3a2a4a" color="#c48cff" fontcolor="#e9daff" penwidth=2];
+  "SupSt" [label="Support State", shape=box, style="filled,rounded" fillcolor="#3a2a4a" color="#c48cff" fontcolor="#e9daff" penwidth=2];
+  "Tool1" [label="Tool: web_search", shape=box, style="filled,rounded" fillcolor="#3a2a4a" color="#c48cff" fontcolor="#e9daff" penwidth=2];
+  "Tool2" [label="Tool: create_order", shape=box, style="filled,rounded" fillcolor="#3a2a4a" color="#c48cff" fontcolor="#e9daff" penwidth=2];
+  "Tool3" [label="Tool: open_ticket", shape=box, style="filled,rounded" fillcolor="#3a2a4a" color="#c48cff" fontcolor="#e9daff" penwidth=2];
+  "Reply" [label="Reply State", shape=box, style="filled,rounded" fillcolor="#3a2a4a" color="#c48cff" fontcolor="#e9daff" penwidth=2];
+  "Escape" [label="HITL review", shape=diamond, style="filled,rounded" fillcolor="#2a1d1d" color="#b8634a" fontcolor="#f1ddd5" penwidth=2];
+  "Done" [label="Reply to user", shape=oval, style="filled,rounded" fillcolor="#2a2a4a" color="#7e74c4" fontcolor="#dcd6f7" penwidth=2];
+  "Start" -> "Intent" [style="solid"];
+  "Intent" -> "SearchSt" [style="solid", label="search"];
+  "Intent" -> "BuySt" [style="solid", label="buy"];
+  "Intent" -> "SupSt" [style="solid", label="support"];
+  "SearchSt" -> "Tool1" [style="solid"];
+  "BuySt" -> "Tool2" [style="solid"];
+  "SupSt" -> "Tool3" [style="solid"];
+  "Tool1" -> "Reply" [style="solid"];
+  "Tool2" -> "Reply" [style="solid"];
+  "Tool3" -> "Reply" [style="solid"];
+  "SearchSt" -> "Escape" [style="dashed", color="#8892b0"];
+  "BuySt" -> "Escape" [style="dashed", color="#8892b0"];
+  "Reply" -> "Done" [style="solid"];
+}

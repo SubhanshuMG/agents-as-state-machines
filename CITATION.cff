@@ -1,0 +1,20 @@
+      cff-version: 1.2.0
+      message: >
+        If you reference this article, please cite it using the metadata
+        below.
+      title: "Stop building agents like prompts. Build them like state machines."
+      abstract: "Part of The Intelligent Infrastructure Playbook. Category: AI · LLMOps."
+      type: article
+      authors:
+        - family-names: Gupta
+          given-names: Subhanshu Mohan
+          email: subhanshugupta0@gmail.com
+          website: https://blogs.subhanshumg.com
+      date-released: "2026-04-18"
+      url: "https://blogs.subhanshumg.com/agents-as-state-machines"
+      repository-code: "https://github.com/SubhanshuMG/agents-as-state-machines"
+      license: CC-BY-4.0
+      keywords:
+        - agents
+- state-machines
+- reliability
