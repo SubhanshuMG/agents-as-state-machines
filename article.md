@@ -104,7 +104,7 @@ The layers:
 
 5. **Event log.** Every state transition is logged to an immutable event store. Enables replay, audit, and forensics.
 
-Implementation reference: [`code/state-machine-agent/`](https://github.com/SubhanshuMG/agents-as-state-machines/blob/main/code/state-machine-agent/). Stack: Temporal Python SDK, LLM, tool wrappers.
+Implementation reference: [`code/state-machine-agent/`](https://github.com/SubhanshuMG/agents-as-state-machines/tree/main/code). Stack: Temporal Python SDK, LLM, tool wrappers.
 
 ## Step-by-step implementation
 
